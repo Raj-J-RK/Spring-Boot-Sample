@@ -22,5 +22,12 @@ public class UserController {
 		userList = userService.fetchUser();
 		return userList;
 	}
+	
+	@RequestMapping("/getUserListFromDb")
+	public List<User> getUsersFromDb() {
+		List<User> userList = new ArrayList<User>();
+		userList = userService.fetchUserFromDb();
+		return userList;
+	}
 
 }

@@ -7,5 +7,7 @@ import com.rk.example.demo.domain.User;
 public interface UserService {
 	
 	public List<User> fetchUser();
+	
+	public List<User> fetchUserFromDb();
 
 }
