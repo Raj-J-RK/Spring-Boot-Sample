@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rk.example.demo.mapper.ItemMapper">
+
+<select id="getAllItems" resultMap="itemResultMap">
+select * from PRODUCTS
+</select>
+
+<resultMap type="com.rk.example.demo.domain.Item" id="itemResultMap">
+	<result property="id" column="ID"/>
+	<result property="name" column="NAME"/>
+	<result property="brand" column="BRAND"/>
+	<result property="category" column="CATEGORY"/>
+	<result property="price" column="PRICE"/>
+</resultMap>
+
+</mapper>
