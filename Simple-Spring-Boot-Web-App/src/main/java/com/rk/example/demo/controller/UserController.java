@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rk.example.demo.domain.User;
 import com.rk.example.demo.service.UserService;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@EnableSwagger2
 @RestController
 public class UserController {
 	

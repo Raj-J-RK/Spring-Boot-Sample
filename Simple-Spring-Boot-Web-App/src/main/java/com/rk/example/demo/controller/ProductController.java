@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rk.example.demo.domain.Products;
 import com.rk.example.demo.service.ProductService;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+
+@EnableSwagger2
 @RestController
 public class ProductController {
 	
