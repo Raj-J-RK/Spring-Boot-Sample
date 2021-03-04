@@ -5,26 +5,25 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.retry.support.RetryTemplate;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.rk.example.demo.domain.Products;
+import com.rk.example.demo.domain.*;
 
 @RestController
-public class ProductController {
+public class ExchangeController {
 	
 	@Autowired
 	RetryTemplate retryTemplate;
 	
-	//retryTemplate is spring retry mechanism with its default retry values
-	@RequestMapping("/callProductService")
-	public List<Products> fetchUsers() {
+	@GetMapping("/getExchanges")
+	public List<Exchange> getExchangeDate() {
 		RestTemplate restTemplate = new RestTemplate();
 		return retryTemplate.execute(args -> {
-			List<Products> products = restTemplate.getForObject("http://localhost:8081/getProducts", ArrayList.class);
-			   return products;
-			  });
+			List<Exchange> exchangeList = restTemplate.getForObject("https://financialmodelingprep.com/api/v3/search?query=AA&exchange=NASDAQ&apikey=demo", ArrayList.class);
+			return exchangeList;
+		});
 	}
 
 }

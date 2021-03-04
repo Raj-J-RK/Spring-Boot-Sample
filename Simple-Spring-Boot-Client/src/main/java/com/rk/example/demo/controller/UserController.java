@@ -14,6 +14,7 @@ import com.rk.example.demo.domain.User;
 @RestController
 public class UserController {
 	
+	//spring retry mechanism
 	@Retryable(maxAttempts=5, backoff=@Backoff (delay=500l), value= {RuntimeException.class})
 	@RequestMapping("/callUserService")
 	public List<User> fetchUsers() {
