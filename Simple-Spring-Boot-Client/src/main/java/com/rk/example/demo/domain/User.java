@@ -15,6 +15,20 @@ public class User {
 	public String getUserId() {
 		return userId;
 	}
+	
+	public User(String userId, String userfName, String userlName, int age, String city, String country,
+			boolean governmentEmployee, LocalDate dob) {
+		super();
+		this.userId = userId;
+		this.userfName = userfName;
+		this.userlName = userlName;
+		this.age = age;
+		this.city = city;
+		this.country = country;
+		this.governmentEmployee = governmentEmployee;
+		this.dob = dob;
+	}
+	
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
